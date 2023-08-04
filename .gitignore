@@ -128,5 +128,7 @@ out
 .yarn/install-state.gz
 .pnp.*
 
+documentation
+
 # webpack
 webpack.config.js
