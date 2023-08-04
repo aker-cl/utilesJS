@@ -5,10 +5,10 @@
 * @license MIT License                     *  
 \******************************************/
 
-const animationCSS = document.createElement('link');
-animationCSS.href = '../css/transition.css';
-animationCSS.rel = 'stylesheet';
-document.head.appendChild(animationCSS);
+// const animationCSS = document.createElement('link');
+// animationCSS.href = '../css/transition.css';
+// animationCSS.rel = 'stylesheet';
+// document.head.appendChild(animationCSS);
 
 'use strict';
 

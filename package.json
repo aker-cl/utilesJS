@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/aker-cl/utilesJS/issues"
   },
-  "homepage": "https://github.com/aker-cl/utilesJS#readme",
+  "homepage": "https://utilesjs.neocities.org",
   "devDependencies": {
     "@babel/core": "^7.22.9",
     "@babel/node": "^7.22.6",
@@ -29,5 +29,8 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "jsdom": "^22.1.0"
+  }
 }
