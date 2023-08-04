@@ -10,14 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/aker-cl/utilesJS.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["javascript", "css", "js"],
+  "author": "Aker",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/aker-cl/utilesJS/issues"
   },
   "homepage": "https://github.com/aker-cl/utilesJS#readme",
   "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/node": "^7.22.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "@babel/preset-env": "^7.22.9",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
