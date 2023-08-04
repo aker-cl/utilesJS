@@ -1,0 +1,25 @@
+{
+  "name": "utilesjs",
+  "version": "1.0.0",
+  "description": "UtilesJS is a set of javascript and css utilities to facilitate the manipulation and use of some javascript elements and the DOM",
+  "main": "./dist/js/utiles.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aker-cl/utilesJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aker-cl/utilesJS/issues"
+  },
+  "homepage": "https://github.com/aker-cl/utilesJS#readme",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "type": "module"
+}

@@ -1,0 +1,6 @@
+/******************************************\
+* AnimationsUtiles 1.0                     *
+*                                          *
+* @author jp7434 <scorpion9915@gmail.com>  *
+* @license MIT License                     *  
+\******************************************/

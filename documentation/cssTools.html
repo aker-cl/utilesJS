@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>UtilesJS</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>    
+    <!-- Plugins CSS -->    
+    <!-- <link rel="stylesheet" href="assets/plugins/prism/prism.css"> -->
+    <link href="../src/models/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="../src/css/checkSwitch.css">
+    <link rel="stylesheet" href="../src/css/lateralModal.css">
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Utiles</span><span class="text-bold">JS</span>
+                        </a>
+                        <div class="float-end">
+                            <img src="../logo.png" height="146" width="146">
+                        </div>
+                    </h1>
+                    
+                </div><!--//branding-->
+                
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">CSS Tools</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> CSS Tools</h1>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section class="doc-section">
+                                <div><h2 class="float-start">Switch</h2> <p class="float-end">checkSwitch.css</p></div>
+                                <div class="section-title mt-4"></div>
+                                <div class="section-block">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Example</h6>
+                                            <pre class="mb-3"><code class="language-html" id="switchCode">
+
+                                            </code></pre>   
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p>Switch size 1</p>
+                                            <label class="check-switch check-switch-1">
+                                                <input type="checkbox" id="check-switch">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p>Switch size 2</p>
+                                            <label class="check-switch check-switch-2">
+                                                <input type="checkbox" id="check-switch">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p>Switch size 3</p>
+                                            <label class="check-switch check-switch-3">
+                                                <input type="checkbox" id="check-switch">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section><!--//doc-section-->
+                            <section class="doc-section">
+                                <div><h2 class="float-start">Left and right modal</h2> <p class="float-end">lateralModal.css</p></div>
+                                <div class="section-title mt-4"></div>
+                                <div class="section-block">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Example</h6>
+                                            <pre class="mb-3"><code class="language-html" id="modalCode">
+
+                                            </code></pre>   
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLeft">Modal left</button>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRight">Modal right</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section><!--//doc-section-->
+                        </div>
+                    </div>
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <li class="nav-item">
+                                    <a class="nav-link scrollto" href="#download-section">Download</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link scrollto" href="#installation-section">Installation</a>
+                                </li>
+                                <nav class="nav doc-sub-menu nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link scrollto" href="#step1">Step One</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link scrollto" href="#step2">Step Two</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link scrollto" href="#step3">Step Three</a>
+                                    </li>
+                                </nav><!--//nav-->
+                                <li class="nav-item">
+                                    <a class="nav-link scrollto" href="#code-section">Code</a>
+                                </li>
+                                
+                                <nav class="nav doc-sub-menu nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link scrollto" href="#html">HTML</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link scrollto" href="#css">CSS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link scrollto" href="#sass">Sass</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link scrollto" href="#less">LESS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#javascript">JavaScript</a>
+                                    </li>
+                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#python">Python</a>
+                                    </li>
+                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#php">PHP</a>
+                                    </li>
+                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#handlebars">Handlebars</a>
+                                    </li>
+                                </nav><!--//nav-->
+                                <li class="nav-item">
+                                        <a class="nav-link scrollto" href="#callouts-section">Callouts</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link scrollto" href="#tables-section">Tables</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link scrollto" href="#buttons-section">Buttons</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link scrollto" href="#video-section">Video</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link scrollto" href="#icons-section">Icons</a>
+                                </li>
+                            </nav><!--//doc-menu-->
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+    <div class="modal fade left-modal" id="modalLeft" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-lateral modal-lg" style="max-width: 30%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade right-modal" id="modalRight" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-lateral modal-lg" style="max-width: 30%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <!-- Main Javascript -->          
+    <script src="assets/plugins/prism/prism.js"></script>   
+    <script src="../src/models/prism.js"></script>   
+    <script src="assets/js/codeCssTools.js"></script>
+</body>
+</html> 
+

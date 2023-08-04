@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>UtilesJS</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">   
+
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="../src/models/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <style>
+        .nav-link {
+            text-decoration: none !important;
+        }
+
+        .select2-selection {
+            min-height: 38px;
+        }
+
+        .select2-selection__rendered {
+            /* line-height: 24px !important;
+            font-size: 12pt; */
+            margin-top: 0.30rem !important;
+        }
+
+        /* .select2-selection {
+            height: 38px !important;
+            font-size: 12pt;
+        } */
+
+        .select2-selection__arrow {
+            height: 37px !important;
+            font-size: 12pt;
+        }
+    </style>
+</head> 
+
+<body class="body-blue">
+    <div class="page-wrapper">
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Utiles</span><span class="text-bold">JS</span>
+                        </a>
+                        <div class="float-end">
+                            <img src="../logo.png" height="146" width="146">
+                        </div>
+                    </h1>
+                </div>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Prototypes.js</li>
+                </ol>
+            </div>
+        </header>
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center mt-2">
+                    <h1 class="doc-title"><i class="icon fa-solid fa-link"></i> Prototypes.js</h1>                    
+                </div>
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section class="doc-section">
+                                <h2 class="section-title" id="Strings">Strings</h2>
+                                <div class="section-block">
+                                    <p>Strings prototype set.</p>
+                                    <article>
+                                        <h6 class="mt-4" id="validateEmail"># validateEmail</h6>
+                                        <p>This prototype validates if an email is valid or not.</p>
+                                        <pre class="mb-3"><code class="language-javascript" id="codeEmail">
+    
+                                        </code></pre>
+                                        <section class="mt-4">                                    
+                                            <h6>Example</h6>
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                  <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-email1" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Javascript</a>
+                                                  <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-email2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">HTML</a>
+                                                </div>
+                                              </nav>
+                                              <div class="tab-content" id="nav-tabContent">
+                                                <div class="tab-pane show active" id="nav-email1" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                    <pre class="mb-3"><code class="language-javascript" id="exampleJsEmail">
+                                                    
+                                                    </code></pre>
+                                                </div>
+                                                <div class="tab-pane" id="nav-email2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                    <pre class="mb-3"><code class="language-html" id="exampleHtmlEmail">
+    
+                                                    </code></pre>
+                                                </div>
+                                            </div>
+                                        </section>                                    
+                                        <form class="needs-validation" action="javascript:checkEmail();" novalidate>
+                                            <div class="input-group flex-nowrap">
+                                                <span class="input-group-text" id="addon-wrapping">@</span>
+                                                <input type="text" class="form-control" id="emailInput" onblur="resetCheckEmail()" placeholder="Email" autocomplete="off"/>
+                                                <div id="validateEmail1" class="valid-tooltip">
+                                                    The email entered is valid!
+                                                </div>
+                                                <div id="validateEmail1" class="invalid-tooltip">
+                                                    The email entered is not valid
+                                                </div>
+                                                <button class="btn btn-outline-secondary" type="button" onclick="checkEmail()" id="button-addon2">Validate</button>
+                                            </div>
+                                        </form>
+                                    </article>
+                                    <article>
+                                        <h6 class="mt-4" id="capFirstLetter"># capFirstLetter</h6>
+                                        <p>This prototype makes the first letter uppercase.</p>
+                                        <pre class="mb-3"><code class="language-javascript" id="codeCap">
+    
+                                        </code></pre>
+    
+                                        <section class="mt-4">
+                                            <h6>Example</h6>
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-cap1" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Javascript</a>
+                                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-cap2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">HTML</a>
+                                                </div>
+                                            </nav>
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <div class="tab-pane show active" id="nav-cap1" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                    <pre class="mb-3"><code class="language-javascript" id="exampleCapJs">
+    
+                                                    </code></pre>
+                                                </div>
+                                                <div class="tab-pane" id="nav-cap2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                    <pre class="mb-3"><code class="language-html" id="exampleCapHtml">
+    
+                                                    </code></pre>
+                                                </div>
+                                            </div>
+                                        </section> 
+                                        <div class="input-group flex-nowrap">
+                                            <input type="text" class="form-control" id="capInput" placeholder="Write something" autocomplete="off"/>
+                                            <button class="btn btn-outline-secondary" type="button" onclick="capLetter()" id="button-addon2">Capitalize</button>
+                                        </div>
+                                    </article>
+                                    <article class="mt-4">
+                                        <h6 id="addLineBreak"># addLineBreak</h6>
+                                        <p>This prototype does a line break every x number of characters.</p>
+                                        <pre class="mb-3"><code class="language-javascript" id="codeLineBreak">
+    
+                                        </code></pre>
+                                        <section class="mt-4">
+                                            <h6>Example</h6>
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-lineBreak1" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Javascript</a>
+                                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-lineBreak2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">HTML</a>
+                                                </div>
+                                            </nav>
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <div class="tab-pane show active" id="nav-lineBreak1" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                    <pre class="mb-3"><code class="language-javascript" id="exampleLineBreakJs">
+    
+                                                    </code></pre>
+                                                </div>
+                                                <div class="tab-pane" id="nav-lineBreak2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                    <pre class="mb-3"><code class="language-html" id="exampleLineBreakCapHtml">
+    
+                                                    </code></pre>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <input type="text" id="lineInput" class="form-control" placeholder="Write something" autocomplete="off"/>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <input type="number" step="1" id="numberLineInput" class="form-control" placeholder="Characters before break" autocomplete="off"/>
+                                                        </div>
+                                                        <div class="col-md-3 mt-1">
+                                                            <button class="btn btn-outline-secondary" type="button" onclick="breakLine()" id="button-break">Break</button>
+                                                        </div>
+                                                    </div>                                            
+                                                </div>
+                                                <div class="col-md-4" style="background-color: white; min-height: 100px; max-width: 310px;" id="lineInputAfter">
+                                                    
+                                                </div>
+                                            </div>                                            
+                                        </section>
+                                    </article>
+                                </div>
+                            </section>        
+                            <section class="doc-section">
+                                <h2 class="section-title" id="Numbers">Numbers</h2>
+                                <div class="section-block">
+                                    <p>Numbers prototype set.</p>
+                                    <article class="mt-4">
+                                        <h6 id="formatPrice"># formatPrice</h6>
+                                        <p>This prototype gives the price format "x.xxx", "xx.xxx", etc.</p>
+                                        <pre class="mb-3"><code class="language-javascript" id="codeFormatPrice">
+
+                                        </code></pre>
+                                    </article>
+                                    <article class="mt-4">
+                                        <h6 id="roundPrice"># roundPrice</h6>
+                                        <p>This prototype rounds the number in base 10, "0-5" remains at 0, "6-9" goes to the next number in base 10.</p>
+                                        <pre class="mb-3"><code class="language-javascript" id="codeRoundPrice">
+    
+                                        </code></pre>
+                                    </article>                                                                                                
+                                </div>
+                            </section>
+                            <section class="doc-section">
+                                <h2 class="section-title" id="Select-element">Select element</h2>
+                                <div class="section-block">
+                                    <p>Select element prototype set.</p>
+                                    <article class="mt-4">
+                                        <h6 id="getTextOptSelected"># getTextOptSelected</h6>
+                                        <p>This prototype gets the text of the selected option.</p>
+                                        <pre class="mb-3"><code class="language-javascript" id="codeGetTextSelect">
+    
+                                        </code></pre>
+                                        <section class="mt-4">
+                                            <h6>Example</h6>
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-getTextSelect1" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Javascript</a>
+                                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-getTextSelect2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">HTML</a>
+                                                </div>
+                                            </nav>
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <div class="tab-pane show active" id="nav-getTextSelect1" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                    <pre class="mb-3"><code class="language-javascript" id="exampleGetTextSelectJs">
+    
+                                                    </code></pre>
+                                                </div>
+                                                <div class="tab-pane" id="nav-getTextSelect2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                    <pre class="mb-3"><code class="language-html" id="exampleGetTextSelectHtml">
+    
+                                                    </code></pre>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <select class="form-control" id="exampleGetTextSelect">
+                                                    <option value="0" disabled selected>Select a option</option>
+                                                    <option value="1">Text 1</option>
+                                                    <option value="2">Text 2</option>
+                                                    <option value="3">Text 3</option>
+                                                </select>                                                
+                                            </div>   
+                                            <div class="col-md-2 mt-1">
+                                                <button class="btn btn-outline-secondary" type="button" onclick="getTextSelect()" id="button-break">Get text</button>
+                                            </div>   
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" id="textExampleGetTextSelect" readonly/>
+                                            </div>                                      
+                                        </div>
+                                    </article>
+                                    <article class="mt-4">
+                                        <h6 id="getDataOptSelected"># getDataOptSelected</h6>
+                                        <p>This prototype gets the specified attribute of the selected option from the select element.</p>
+                                        <pre class="mb-3"><code class="language-javascript" id="codeGetDataSelect">
+    
+                                        </code></pre>
+                                        <section class="mt-4">
+                                            <h6>Example</h6>
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-getDataSelect1" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Javascript</a>
+                                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-getDataSelect2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">HTML</a>
+                                                </div>
+                                            </nav>
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <div class="tab-pane show active" id="nav-getDataSelect1" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                    <pre class="mb-3"><code class="language-javascript" id="exampleGetDataSelectJs">
+    
+                                                    </code></pre>
+                                                </div>
+                                                <div class="tab-pane" id="nav-getDataSelect2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                    <pre class="mb-3"><code class="language-html" id="exampleGetDataSelectHtml">
+    
+                                                    </code></pre>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <select class="form-control" id="exampleGetDataSelect">
+                                                    <option value="0" disabled selected>Select a option</option>
+                                                    <option value="1" data-opt="example1" data-opt2="select1">Text 1</option>
+                                                    <option value="2" data-opt="example2" data-opt2="select2">Text 2</option>
+                                                    <option value="3" data-opt="example3" data-opt2="select3">Text 3</option>
+                                                </select>                                                
+                                            </div>
+                                            <div class="col-md-3">
+                                                <select class="form-control" id="exampleDataGetDataSelect">
+                                                    <option value="data-opt">data-opt</option>
+                                                    <option value="data-opt2">data-opt2</option>
+                                                </select>                                                
+                                            </div>
+                                            <div class="col-md-3 mt-1">
+                                                <button class="btn btn-outline-secondary" type="button" onclick="getDataSelect()" id="button-break">Get data</button>
+                                            </div>   
+                                            <div class="col-md-3">
+                                                <input type="text" class="form-control" id="textExampleGetDataSelect" readonly/>
+                                            </div>                                      
+                                        </div>
+                                    </article>
+                                    
+                                    <article class="mt-4">
+                                        <h6 id="getAllDataOptSelected"># getAllDataOptSelected</h6>
+                                        <p>This prototype gets all the attributes of the selected option from the select element.</p>
+                                        <pre class="mb-3"><code class="language-javascript" id="codeGetAllDataSelect">
+    
+                                        </code></pre>
+
+                                        <section class="mt-4">
+                                            <h6>Example</h6>
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-getAllDataSelect1" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Javascript</a>
+                                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-getAllDataSelect2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">HTML</a>
+                                                </div>
+                                            </nav>
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <div class="tab-pane show active" id="nav-getAllDataSelect1" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                    <pre class="mb-3"><code class="language-javascript" id="exampleGetAllDataSelectJs">
+    
+                                                    </code></pre>
+                                                </div>
+                                                <div class="tab-pane" id="nav-getAllDataSelect2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                    <pre class="mb-3"><code class="language-html" id="exampleGetAllDataSelectHtml">
+    
+                                                    </code></pre>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <select class="form-control" id="exampleGetAllDataSelect">
+                                                    <option value="0" disabled selected>Select a option</option>
+                                                    <option value="1" data-opt="example1" data-opt2="select1">Text 1</option>
+                                                    <option value="2" data-opt="example2" data-opt2="select2">Text 2</option>
+                                                    <option value="3" data-opt="example3" data-opt2="select3">Text 3</option>
+                                                </select>                                                
+                                            </div>
+                                            <div class="col-md-2 mt-1">
+                                                <button class="btn btn-outline-secondary" type="button" onclick="getAllDataSelect()" id="button-break">Get all data</button>
+                                            </div>   
+                                            <div class="col-md-7">
+                                                <input type="text" class="form-control" id="textExampleGetAllDataSelect" readonly/>
+                                            </div>
+                                        </div>
+                                    </article>
+
+                                    <article class="mt-4">
+                                        <h6 id="getValuesMultipleOptSelected"># getValuesMultipleOptSelected</h6>
+                                        <p>This prototype gets the values of the selected options from the select multiple element.</p>
+                                        <pre class="mb-3"><code class="language-javascript" id="codeGetValuesMultipleSelect">
+    
+                                        </code></pre>
+
+                                        <section class="mt-4">
+                                            <h6>Example</h6>
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-getValuesMultipleSelect1" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Javascript</a>
+                                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-getValuesMultipleSelect2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">HTML</a>
+                                                </div>
+                                            </nav>
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <div class="tab-pane show active" id="nav-getValuesMultipleSelect1" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                    <pre class="mb-3"><code class="language-javascript" id="exampleGetValuesMultipleSelectJs">
+    
+                                                    </code></pre>
+                                                </div>
+                                                <div class="tab-pane" id="nav-getValuesMultipleSelect2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                    <pre class="mb-3"><code class="language-html" id="exampleGetValuesMultipleSelectHtml">
+    
+                                                    </code></pre>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <select class="form-control select2" id="exampleGetValuesMultipleSelect" multiple>
+                                                    <option value="1" data-opt="example1" data-opt2="select1">Text 1</option>
+                                                    <option value="2" data-opt="example2" data-opt2="select2">Text 2</option>
+                                                    <option value="3" data-opt="example3" data-opt2="select3">Text 3</option>
+                                                </select>                                                
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button class="btn btn-outline-secondary" type="button" onclick="getValuesMultipleSelect()" id="button-break">Get all values</button>
+                                            </div>   
+                                            <div class="col-md-7">
+                                                <input type="text" class="form-control" id="textGetValuesMultipleSelect" readonly/>
+                                            </div>
+                                        </div>
+                                    </article>                                   
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <ul id="doc-menu" class="nav doc-menu flex-column sticky">
+	                            <li class="nav-item">
+                                    <a class="nav-link scrollto" href="#">Prototypes.js</a>
+	                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link scrollto" href="#Strings">Strings</a>
+	                            </li>
+	                            <li class="nav-item">
+                                    <ul class="nav doc-sub-menu nav flex-column">
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#validateEmail">validateEmail</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#capFirstLetter">capFirstLetter</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#addLineBreak">addLineBreak</a>
+	                                    </li>
+                                    </ul>
+	                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link scrollto" href="#Numbers">Numbers</a>
+	                            </li>
+                                <li class="nav-item">
+                                    <ul class="nav doc-sub-menu nav flex-column">
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#formatPrice">formatPrice</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#roundPrice">roundPrice</a>
+	                                    </li>
+                                    </ul>
+	                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link scrollto" href="#Select-element">Select element</a>
+	                            </li>
+                                <li class="nav-item">
+                                    <ul class="nav doc-sub-menu nav flex-column">
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#getTextOptSelected">getTextOptSelected</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#getDataOptSelected">getDataOptSelected</a>
+	                                    </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#getAllDataOptSelected">getAllDataOptSelected</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#getValuesMultipleOptSelected">getValuesMultipleOptSelected</a>
+	                                    </li>
+                                    </ul>
+	                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>             
+            </div>
+        </div>    
+    </div>
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <small class="copyright">Developed by <a href="https://github.com/jp7434" target="_blank">Aker</a> for developers</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
+    crossorigin="anonymous"></script> 
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="assets/plugins/prism/prism.js"></script>   
+
+    <script src="./assets/js/prototypesExamples.js"></script>
+    <script src="../src/models/prism.js"></script>
+    <script src="./assets/js/codePrototypes.js"></script>   
+</body>
+</html> 
+
+
+

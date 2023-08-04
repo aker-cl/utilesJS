@@ -1,0 +1,2 @@
+/*! For license information please see animationsUtiles.js.LICENSE.txt */
+!function(e,t){if("object"==typeof exports&&"object"==typeof module)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{var o=t();for(var n in o)("object"==typeof exports?exports:e)[n]=o[n]}}(self,(()=>(()=>{const e=document.createElement("link");return e.href="../css/transition.css",e.rel="stylesheet",document.head.appendChild(e),{}})()));
