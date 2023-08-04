@@ -1,6 +1,6 @@
 {
   "name": "utilesjs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "UtilesJS is a set of javascript and css utilities to facilitate the manipulation and use of some javascript elements and the DOM",
   "main": "./dist/js/utiles.js",
   "scripts": {
@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/aker-cl/utilesJS.git"
   },
-  "keywords": ["javascript", "css", "js"],
+  "keywords": [
+    "javascript",
+    "css",
+    "js"
+  ],
   "author": "Aker",
   "license": "MIT",
   "bugs": {
