@@ -1,0 +1,13 @@
+/* This if just for animationsUtiles and animationPrototypes */
+
+.div-transition {
+    transition: opacity 0.5s ease;
+}
+
+.div-hide {
+    opacity: 0;
+}
+
+.div-show {
+    opacity: 1;
+}

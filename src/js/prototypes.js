@@ -1,5 +1,5 @@
 /******************************************\
-* Prototypes 0.1.2                         *
+* Prototypes                               *
 *                                          *
 * @author aker <scorpion9915@gmail.com>    *
 * @license MIT License                     *  

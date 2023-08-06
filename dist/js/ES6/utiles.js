@@ -1,4 +1,4 @@
-function UtilesJS(){
+export function UtilesJS(){
     return {
         /** Fetch */
 

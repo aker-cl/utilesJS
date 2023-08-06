@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css" rel="stylesheet"> -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link href="models/styles.css" rel="stylesheet" />
     <link href="css/checkSwitch.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
@@ -54,16 +53,18 @@
                 <div class="row">
                     <div class="col-md-3">
                         <select id="select" name="select" class="form-control select2" multiple>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
+                            <option value="1" data-opt="a">1</option>
+                            <option value="2" data-opt="b">2</option>
+                            <option value="3" data-opt="c">3</option>
+                            <option value="4" data-opt="d">4</option>
                         </select>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary" onclick="setValues()">Set Values</button>
+                        <button class="btn btn-primary" id="btnSelect">Set Values</button>
                     </div>
                 </div>
+                <input id="inputTest" class="form-control mt-3"/>
+
             </article>
         </div>
         <span id="numberEl"></span>
@@ -71,74 +72,11 @@
 </body>
 </html>
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script> -->
-<!-- <script src="index.js" type="module"></script> -->
-<script src="../umd/prototypes.js"></script>
+<!-- <script src="./js/utiles.js"></script> -->
+<!-- <script src="../dist/umd/utiles.js"></script> -->
 
-<script>
-    var oj = [1, 2, 3, 4];
-    oj.removeItemsByIndex([1,2]);
-    console.log(oj);
-
-    // $('.select2').select2({
-    //     placeholder: "as",
-    // });
-
-    // HTMLSelectElement.prototype.getValuesMultipleOpts = function getValuesMultipleOpts(){
-    //     let values = [];
-    //     let options = this.selectedOptions;
-
-    //     for (const option of options) {
-    //         values.push(option.value);
-    //     }
-
-    //     return values;
-    // }
-
-    // HTMLSelectElement.prototype.setMultipleValues = function setMultipleValues(data, attribute = null){
-    //     function haveArrays(obj) {
-    //         for (const o of obj) {
-    //             if (typeof o == 'object') {
-    //                 return 'object';
-    //             }
-    //         }
-    //         return 'array';
-    //     }
-
-    //     const event = new Event("change");
-    //     let values = [];
-
-    //     switch (haveArrays(data)) {
-    //         case 'object':
-    //             for(const object of data){
-    //                 values.push(object[attribute]);
-    //             }
-    //             break;
-    //         case 'array':
-    //             values = data;
-    //             break;
-    //     }
-
-    //     values = values.map(i => String(i));
-
-    //     for (const option of this.options) {
-    //         if (values.includes(option.value)) {
-    //             option.selected = true;
-    //         }else{
-    //             option.selected = false;
-    //         }
-    //     }
-
-    //     this.dispatchEvent(event);
-    // }
-
-    // function getValues(){
-    //     const selectElmt = document.getElementById("select");
-    //     console.log(selectElmt.getValuesMultipleOpts());
-    // }
-
-    // function setValues(){
-    // // agregarValoresSeleccionados();
-    // let values = [1,2];
-    // document.querySelector('#select').setMultipleValues(values);
-    // }
-</script>
+<!-- <script>
+    const ut = UtilesJS();
+    console.log(UtilesJS());
+</script> -->
+<script src="./test.js" type="module"></script>

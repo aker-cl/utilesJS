@@ -595,3 +595,5 @@ function UtilesJS(){
         }
     }
 }
+
+module.exports = UtilesJS;

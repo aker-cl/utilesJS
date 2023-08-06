@@ -1,5 +1,5 @@
 /******************************************\
-* EventsUtiles 1.0                         *
+* EventsUtiles                             *
 *                                          *
 * @author jp7434 <scorpion9915@gmail.com>  *
 * @license MIT License                     *  

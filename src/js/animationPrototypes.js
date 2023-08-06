@@ -1,5 +1,5 @@
 /******************************************\
-* AnimationPrototypes 1.0                  *
+* AnimationPrototypes                      *
 *                                          *
 * @author jp7434 <scorpion9915@gmail.com>  *
 * @license MIT License                     *  
