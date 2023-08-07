@@ -132,3 +132,5 @@ documentation
 
 # webpack
 webpack.config.js
+
+tsconfig.json

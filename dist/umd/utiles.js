@@ -49,7 +49,7 @@ function UtilesJS(){
         /** Arrays */
 
         /**
-         * This function orders an array by string, date by number according to the attribute and in both ascending and descending order
+         * This function orders an array by string, date or number according to the attribute and in both ascending and descending order
          * 
          * @param {array} array 
          * 
@@ -140,7 +140,7 @@ function UtilesJS(){
             let finalArray = [];
     
             arrays.forEach(element => {
-                let obj = Utiles().arrayGroupBy(element, attribute);
+                let obj = UtilesJS().arrayGroupBy(element, attribute);
                 newArray.push(obj);
             });
     
