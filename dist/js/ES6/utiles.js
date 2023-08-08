@@ -164,7 +164,7 @@ export function UtilesJS(){
             return finalArray;
         },
         /**
-         * This function deletes the objects according to their index
+         * This function removes the elements of an array based on their index, respecting the initial order
          * 
          * @param {array} array 
          * @param {array} indexes [1,2,...]

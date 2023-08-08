@@ -16,6 +16,10 @@ See the full documentation in <a href="https://utilesjs.neocities.org">utilesjs.
 
 ## Release Notes
 
+### v0.2.3 - Aug 08, 2023
+
+- add colors to "checkSwitch.css"
+
 ### v0.2.2 - Aug 07, 2023
 
 - "arrayFusionByAttribute" function is corrected. The "arrayGroupBy" function was wrongly referenced in utiles.js

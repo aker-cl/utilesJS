@@ -85,7 +85,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #0d6efd!important;
+    box-shadow: 0 0 1px #0d6efd !important;
 }
 
 .check-switch.check-switch-1 input:checked + .slider:before {
