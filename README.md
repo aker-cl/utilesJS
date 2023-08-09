@@ -1,5 +1,11 @@
 <p align="center"><img src="./logo.png" width="400" alt="UtilesJS Logo"></p>
 
+<p align="center">
+    <a href="https://www.npmjs.com/package/utilesjs"><img src="https://img.shields.io/npm/dt/utilesjs" alt="Downloads"></a>
+    <a href="https://www.npmjs.com/package/utilesjs"><img src="https://img.shields.io/npm/v/utilesjs" alt="Version"></a>
+    <img src="https://img.shields.io/npm/l/utilesjs" alt="Licence">
+<p>
+
 ## About UtilesJS
 UtilesJS is a set of javascript and css utilities to facilitate the manipulation and use of some javascript elements and the DOM:
 
@@ -13,6 +19,10 @@ UtilesJS is a set of javascript and css utilities to facilitate the manipulation
 - Etc.
 
 See the full documentation in <a href="https://utilesjs.neocities.org">utilesjs.neocities.org</a> (Periodic update)
+
+Current development:
+- utiles.js documentation
+- prototypes.js + documentation
 
 ## Release Notes
 
