@@ -26,19 +26,23 @@ Current development:
 
 ## Release Notes
 
+### v0.2.6 - Aug 16, 2023
+
+- Add hash in filterPage function of utiles.js
+
 ### v0.2.5 - Aug 16, 2023
 
 - discountPrice function now just return de new price
 - Correction of variable in function listenerInputsFilter of utiles.js
-- add .d.ts to utiles.js
+- Add .d.ts to utiles.js
 
 ### v0.2.4 - Aug 09, 2023
 
-- update of readme
+- Update of readme
 
 ### v0.2.3 - Aug 08, 2023
 
-- add colors to "checkSwitch.css"
+- Add colors to "checkSwitch.css"
 
 ### v0.2.2 - Aug 07, 2023
 

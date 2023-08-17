@@ -12,8 +12,11 @@
   },
   "keywords": [
     "javascript",
+    "typescript",
     "css",
-    "js"
+    "js",
+    "utiles",
+    "utilities"
   ],
   "author": "Aker",
   "license": "MIT",

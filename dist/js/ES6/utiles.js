@@ -524,6 +524,8 @@ export function UtilesJS(){
                 }
             });
 
+            url+= `${UtilesJS().getHashUrl()}`;
+
             window.location.href = url;
         },
         /**
@@ -563,7 +565,7 @@ export function UtilesJS(){
                         page.value = this.text;
                     }
 
-                    UtilesJS().filterPage(classFilter, url);
+                    UtilesJS().filterPage(classFilter, url, page.value);
                 });
             });
         },
