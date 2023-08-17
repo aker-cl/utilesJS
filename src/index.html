@@ -41,18 +41,11 @@
         </div>
     </header>
     <section class="bg-light py-5">
-        
         <div class="container px-5 my-5">
-            <pre class="mb-3"><code class="language-javascript">
-[
-    {value: "1"},
-    {value: "2"}
-]
-            </code></pre>
             <article>
                 <div class="row">
                     <div class="col-md-3">
-                        <select id="select" name="select" class="form-control select2" multiple>
+                        <select id="exampleSetValuesSelectMultiple" name="select" class="form-control select2" multiple>
                             <option value="1" data-opt="a">1</option>
                             <option value="2" data-opt="b">2</option>
                             <option value="3" data-opt="c">3</option>
@@ -80,3 +73,9 @@
     console.log(UtilesJS());
 </script> -->
 <script src="./test.js" type="module"></script>
+
+<script>
+    $('.select2').select2({
+        placeholder: "Select a option",
+    });
+</script>

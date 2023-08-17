@@ -18,13 +18,23 @@ UtilesJS is a set of javascript and css utilities to facilitate the manipulation
 - Transitions
 - Etc.
 
-See the full documentation in <a href="https://utilesjs.neocities.org">utilesjs.neocities.org</a> (Periodic update)
+See the full documentation in <a href="https://utilesjs.neocities.org" target="_blank">utilesjs.neocities.org</a> (Periodic update)
 
 Current development:
 - utiles.js documentation
 - prototypes.js + documentation
 
 ## Release Notes
+
+### v0.2.5 - Aug 16, 2023
+
+- discountPrice function now just return de new price
+- Correction of variable in function listenerInputsFilter of utiles.js
+- add .d.ts to utiles.js
+
+### v0.2.4 - Aug 09, 2023
+
+- update of readme
 
 ### v0.2.3 - Aug 08, 2023
 

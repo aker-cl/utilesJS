@@ -1,15 +1,27 @@
 import { UtilesJS } from '../dist/js/ES6/utiles.js';
 
-var array = [1,2,3,4,5];
-var array2 = [
-    {sale_cost: '262840', date: '2023-02-17'},
-    {sale_cost: '100376', date: '2023-02-20'},
-    {sale_cost: '64474', date: '2023-03-01'}
-];
+const exampleSetValuesSelectMultiple = document.querySelector('#exampleSetValuesSelectMultiple');
+const btnSelect = document.querySelector('#btnSelect');
 
-UtilesJS().arrayRemoveItemsByIndex(array, [1,3]);
-UtilesJS().arrayRemoveItemsByIndex(array2, [2]);
+// btnSelect.addEventListener('click', () => {
+//     let selectValue = "3";
+//     UtilesJS().setValueOfSelect(exampleSetValueOfSelect, selectValue);
+// });
 
-console.log(array2);
+btnSelect.addEventListener('click', () => {
+    let values = ["2", "3"];
+    // UtilesJS().setValueOfSelect(exampleSetValueOfSelect, selectValue);
+    UtilesJS().setValuesSelectMultiple(exampleSetValuesSelectMultiple, values);
+});
 
-// UtilesJS().simulateKeyPress('inputTest', 'Hi! my name is Aker, nice to meet you.');
+
+
+function setValuesSelect(selectValue){
+    UtilesJS().setValueOfSelect(exampleSetValueOfSelect, selectValue);
+}
+
+const setValuesSelectMultiple = (values) => {
+    UtilesJS().setValuesSelectMultiple(exampleSetValueOfSelect, values);
+}
+
+// console.log(UtilesJS().discountPrice(price, discount)); // 31160

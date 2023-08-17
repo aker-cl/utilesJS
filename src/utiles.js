@@ -1,4 +1,4 @@
-function UtilesJS(){
+export function UtilesJS(){
     return {
         /** Fetch */
 
@@ -272,7 +272,7 @@ function UtilesJS(){
          * @param {number} price
          * @param {number} discount discount percentage
          *
-         * @returns {number} discounted price
+         * @returns {number}  price
          */
         discountPrice: (price, discount) => {
             let newPrice = 0;
@@ -401,9 +401,9 @@ function UtilesJS(){
          * @param {string} tableID id of table
          * @param {string} row HTML of the row to be added
          * @param {string|int} position 'first' | 'last' | number -> position of the row in the table
-         * @param {object|null} object object of values to add to the new row
+         * @param {array|null} array array of values to add to the new row
          */
-        addRowToTable: (tableID, row, position, object = null) => {
+        addRowToTable: (tableID, row, position, array = null) => {
             let tableRef = document.querySelector(`#${tableID} tbody`);
             let newRow;
 
@@ -419,8 +419,8 @@ function UtilesJS(){
                 break;
             }
 
-            if(object != null){
-                for(const [key, value] of Object.entries(object)){
+            if(array != null){
+                for(const [key, value] of Object.entries(array)){
                     newRow[key] = value;
                 }
             }
@@ -539,7 +539,7 @@ function UtilesJS(){
                 element.addEventListener('keyup', function(e){
                     e.preventDefault();
                     if(e.which == 13) {
-                        UtilesJS().filterPage(elClass, page, 1);
+                        UtilesJS().filterPage(clase, page, 1);
                     }
                 });
             });
