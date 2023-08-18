@@ -214,7 +214,7 @@ Number.prototype.discountPrice = function discountPrice(discount){
  *
  * @returns selected text from the select element
  */
-HTMLSelectElement.prototype.getTextOptSelected = function getTextOptSelected() {
+Object.prototype.getTextOptSelected = function getTextOptSelected() {
     return this.options[this.selectedIndex].text;
 }
 
@@ -225,7 +225,7 @@ HTMLSelectElement.prototype.getTextOptSelected = function getTextOptSelected() {
  *
  * @returns attribute value
  */
-HTMLSelectElement.prototype.getDataOptSelected = function getDataOptSelected(attribute){
+Object.prototype.getDataOptSelected = function getDataOptSelected(attribute){
     return this.options[this.selectedIndex].getAttribute(attribute);
 }
 
@@ -234,7 +234,7 @@ HTMLSelectElement.prototype.getDataOptSelected = function getDataOptSelected(att
  *
  * @returns array with element's attributes
  */
-HTMLSelectElement.prototype.getAllDataOptSelected = function getAllDataOptSelected() {
+Object.prototype.getAllDataOptSelected = function getAllDataOptSelected() {
     const option = this.options[this.selectedIndex].attributes;
     let array = {};
 
@@ -250,7 +250,7 @@ HTMLSelectElement.prototype.getAllDataOptSelected = function getAllDataOptSelect
  *
  * @returns {array }array with selected options values
  */
-HTMLSelectElement.prototype.getValuesMultipleOpts = function getValuesMultipleOpts(){
+Object.prototype.getValuesMultipleOpts = function getValuesMultipleOpts(){
     let values = [];
     let options = this.selectedOptions;
 
@@ -266,7 +266,7 @@ HTMLSelectElement.prototype.getValuesMultipleOpts = function getValuesMultipleOp
  * 
  * @param {string | int} value value to assign in the select
  */
-HTMLSelectElement.prototype.setValue = function setValue(value){
+Object.prototype.setValue = function setValue(value){
     const eventChange = new Event("change");
     this.value = value;
     this.dispatchEvent(eventChange);
@@ -278,7 +278,7 @@ HTMLSelectElement.prototype.setValue = function setValue(value){
  * @param {array} data object with attributes
  * @param {string|null} attribute attribute name of object in array to assign values to the select multiple
  */
-HTMLSelectElement.prototype.setMultipleValues = function setMultipleValues(data, attribute = null){
+Object.prototype.setMultipleValues = function setMultipleValues(data, attribute = null){
     function getTypeOf(obj) {
         for (const o of obj) {
             if (typeof o == 'object') {
@@ -322,7 +322,7 @@ HTMLSelectElement.prototype.setMultipleValues = function setMultipleValues(data,
  * @param {string|int} position 'first' | 'last' | number -> position of the row in the table
  * @param {object|null} object object of values to add to the new row
  */
-HTMLTableElement.prototype.addRow = function addRow(row, position, object = null){
+Object.prototype.addRow = function addRow(row, position, object = null){
     let tablaRef = this.getElementsByTagName('tbody')[0];
     let newRow;
 
@@ -352,7 +352,7 @@ HTMLTableElement.prototype.addRow = function addRow(row, position, object = null
  * 
  * @param {string} rowId tr element from the DOM
  */
-HTMLTableRowElement.prototype.deleteRow = function deleteRow() {
+Object.prototype.deleteRow = function deleteRow() {
     this.parentNode.removeChild(this);
 }
 
@@ -380,3 +380,4 @@ Object.prototype.simulateKeyPress =  function simulateKeyPress(value){
     }
 }
 
+export {};

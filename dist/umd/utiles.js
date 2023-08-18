@@ -356,7 +356,7 @@ function UtilesJS(){
          * This function assign values to a select multiple
          * 
          * @param {element} select select element from the DOM
-         * @param {array} array object with attributes
+         * @param {array} data object with attributes
          * @param {string|null} attribute attribute name of object in array to assign values to the select multiple
          */
         setValuesSelectMultiple: (select, data, attribute = null) => {
@@ -524,7 +524,7 @@ function UtilesJS(){
                 }
             });
 
-            url+= `${UtilesJS().getHashUrl()}`;
+            url += `${UtilesJS().getHashUrl()}`;
 
             window.location.href = url;
         },
@@ -572,11 +572,10 @@ function UtilesJS(){
         /**
          * This function simulates that the user is pressing a key and writes the character in the input
          * 
-         * @param {*} elementId id of input element
-         * @param {*} value value to write to input
+         * @param {string} elementId id of input element
+         * @param {string|number} value value to write to input
          */
         simulateKeyPress: (elementId, value) => {
-
             let inputElement = document.querySelector(`#${elementId}`);
             let event = new Event('keypress');
             let text = value.toString();

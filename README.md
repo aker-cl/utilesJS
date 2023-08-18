@@ -1,8 +1,8 @@
 <p align="center"><img src="./logo.png" width="400" alt="UtilesJS Logo"></p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/utilesjs"><img src="https://img.shields.io/npm/dt/utilesjs" alt="Downloads"></a>
-    <a href="https://www.npmjs.com/package/utilesjs"><img src="https://img.shields.io/npm/v/utilesjs" alt="Version"></a>
+    <a href="https://www.npmjs.com/package/utilesjs" target="_blank"><img src="https://img.shields.io/npm/dt/utilesjs" alt="Downloads"></a>
+    <a href="https://www.npmjs.com/package/utilesjs" target="_blank"><img src="https://img.shields.io/npm/v/utilesjs" alt="Version"></a>
     <img src="https://img.shields.io/npm/l/utilesjs" alt="Licence">
 <p>
 
@@ -21,10 +21,16 @@ UtilesJS is a set of javascript and css utilities to facilitate the manipulation
 See the full documentation in <a href="https://utilesjs.neocities.org" target="_blank">utilesjs.neocities.org</a> (Periodic update)
 
 Current development:
-- utiles.js documentation
-- prototypes.js + documentation
+- prototypes.js documentation
+
+Next development:
+- eventsUtiles.js and animationUtiles.js
 
 ## Release Notes
+
+## v0.3.0 - Aug 17, 2023
+
+- Add prototypes.js with .d.ts in commonJS, ES6 and umd
 
 ### v0.2.6 - Aug 16, 2023
 

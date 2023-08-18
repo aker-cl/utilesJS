@@ -524,7 +524,7 @@ export function UtilesJS(){
                 }
             });
 
-            url+= `${UtilesJS().getHashUrl()}`;
+            url += `${UtilesJS().getHashUrl()}`;
 
             window.location.href = url;
         },
@@ -572,11 +572,10 @@ export function UtilesJS(){
         /**
          * This function simulates that the user is pressing a key and writes the character in the input
          * 
-         * @param {*} elementId id of input element
-         * @param {*} value value to write to input
+         * @param {string} elementId id of input element
+         * @param {string|number} value value to write to input
          */
         simulateKeyPress: (elementId, value) => {
-
             let inputElement = document.querySelector(`#${elementId}`);
             let event = new Event('keypress');
             let text = value.toString();

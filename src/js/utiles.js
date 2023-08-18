@@ -49,7 +49,7 @@ function UtilesJS(){
         /** Arrays */
 
         /**
-         * This function orders an array by string, date by number according to the attribute and in both ascending and descending order
+         * This function orders an array by string, date or number according to the attribute and in both ascending and descending order
          * 
          * @param {array} array 
          * 
@@ -140,7 +140,7 @@ function UtilesJS(){
             let finalArray = [];
     
             arrays.forEach(element => {
-                let obj = Utiles().arrayGroupBy(element, attribute);
+                let obj = UtilesJS().arrayGroupBy(element, attribute);
                 newArray.push(obj);
             });
     
@@ -164,7 +164,7 @@ function UtilesJS(){
             return finalArray;
         },
         /**
-         * This function deletes the objects according to their index
+         * This function removes the elements of an array based on their index, respecting the initial order
          * 
          * @param {array} array 
          * @param {array} indexes [1,2,...]
@@ -272,12 +272,12 @@ function UtilesJS(){
          * @param {number} price
          * @param {number} discount discount percentage
          *
-         * @returns {object} { price, newPrice } initial price and discounted price
+         * @returns {number} discounted price
          */
         discountPrice: (price, discount) => {
             let newPrice = 0;
             newPrice = price - (price * (discount / 100));
-            return {price, newPrice};
+            return newPrice;
         },
 
         /** DOM */
@@ -293,7 +293,7 @@ function UtilesJS(){
             return select.options[select.selectedIndex].text;
         },
         /**
-         * Ths function get the value of an attribute of the selected option of select element
+         * This function get the value of an attribute of the selected option of select element
          * 
          * @param {element} select select element from the DOM
          * @param {string} attribute attribute name to retrieve
@@ -401,9 +401,9 @@ function UtilesJS(){
          * @param {string} tableID id of table
          * @param {string} row HTML of the row to be added
          * @param {string|int} position 'first' | 'last' | number -> position of the row in the table
-         * @param {array|null} array array of values to add to the new row
+         * @param {object|null} object object of values to add to the new row
          */
-        addRowToTable: (tableID, row, position, array = null) => {
+        addRowToTable: (tableID, row, position, object = null) => {
             let tableRef = document.querySelector(`#${tableID} tbody`);
             let newRow;
 
@@ -419,8 +419,8 @@ function UtilesJS(){
                 break;
             }
 
-            if(array != null){
-                for(const [key, value] of Object.entries(array)){
+            if(object != null){
+                for(const [key, value] of Object.entries(object)){
                     newRow[key] = value;
                 }
             }
@@ -524,6 +524,8 @@ function UtilesJS(){
                 }
             });
 
+            url += `${UtilesJS().getHashUrl()}`;
+
             window.location.href = url;
         },
         /**
@@ -539,7 +541,7 @@ function UtilesJS(){
                 element.addEventListener('keyup', function(e){
                     e.preventDefault();
                     if(e.which == 13) {
-                        UtilesJS().filterPage(clase, page, 1);
+                        UtilesJS().filterPage(elClass, page, 1);
                     }
                 });
             });
@@ -563,18 +565,17 @@ function UtilesJS(){
                         page.value = this.text;
                     }
 
-                    UtilesJS().filterPage(classFilter, url);
+                    UtilesJS().filterPage(classFilter, url, page.value);
                 });
             });
         },
         /**
          * This function simulates that the user is pressing a key and writes the character in the input
          * 
-         * @param {*} elementId id of input element
-         * @param {*} value value to write to input
+         * @param {string} elementId id of input element
+         * @param {string|number} value value to write to input
          */
         simulateKeyPress: (elementId, value) => {
-
             let inputElement = document.querySelector(`#${elementId}`);
             let event = new Event('keypress');
             let text = value.toString();
