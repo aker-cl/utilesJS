@@ -28,6 +28,9 @@ Next development:
 
 ## Release Notes
 
+## v0.3.1 - Aug 17, 2023
+
+- Change package.json type "commonjs" to "module"
 ## v0.3.0 - Aug 17, 2023
 
 - Add prototypes.js with .d.ts in commonJS, ES6 and umd
