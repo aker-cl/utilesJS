@@ -28,7 +28,11 @@ Next development:
 
 ## Release Notes
 
-### v0.3.3 - Aug , 2023
+### v0.3.4 - Aug 22, 2023
+
+- prototype "simulateKeyPress" is separated into prototype of input and textarea
+
+### v0.3.3 - Aug 21, 2023
 
 - add some folders and files to .npmignore
 

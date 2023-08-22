@@ -361,7 +361,8 @@ HTMLTableRowElement.prototype.deleteRow = function deleteRow() {
  * 
  * @param {string|number} value value to write to input
  */
-Object.prototype.simulateKeyPress =  function simulateKeyPress(value){
+HTMLInputElement.prototype.simulateKeyPress = function simulateKeyPress(value){
+    let element = this;
     let event = new Event('keypress');
     let text = value.toString();
     let index = 0;
@@ -371,8 +372,28 @@ Object.prototype.simulateKeyPress =  function simulateKeyPress(value){
     function addCharacter() {
         if (index < text.length) {
             var currentChar = text.charAt(index);
-            this.value += currentChar;
-            this.dispatchEvent(event);
+            element.value += currentChar;
+            element.dispatchEvent(event);
+            index++;
+        } else {
+            clearInterval();
+        }
+    }
+}
+
+HTMLTextAreaElement.prototype.simulateKeyPress = function simulateKeyPress(value){
+    let element = this;
+    let event = new Event('keypress');
+    let text = value.toString();
+    let index = 0;
+
+    setInterval(addCharacter, 100);
+
+    function addCharacter() {
+        if (index < text.length) {
+            var currentChar = text.charAt(index);
+            element.value += currentChar;
+            element.dispatchEvent(event);
             index++;
         } else {
             clearInterval();
