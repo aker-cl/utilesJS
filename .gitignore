@@ -137,3 +137,5 @@ tsconfig.json
 
 .vscode
 .babelrc
+src/
+umd/

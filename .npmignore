@@ -1,2 +1,6 @@
 src/
 umd/
+documentation/
+tsconfig.json
+webpack.config.js
+.vscode/
