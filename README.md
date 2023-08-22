@@ -28,10 +28,15 @@ Next development:
 
 ## Release Notes
 
-## v0.3.1 - Aug 17, 2023
+### v0.3.2 - Aug 18, 2023
+
+- Change name of folder "ES6" to "ES"
+- Add src/ and umd/ to .npmignore and .gitignore
+
+### v0.3.1 - Aug 17, 2023
 
 - Change package.json type "commonjs" to "module"
-## v0.3.0 - Aug 17, 2023
+### v0.3.0 - Aug 17, 2023
 
 - Add prototypes.js with .d.ts in commonJS, ES6 and umd
 

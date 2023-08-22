@@ -136,3 +136,4 @@ webpack.config.js
 tsconfig.json
 
 .vscode
+.babelrc

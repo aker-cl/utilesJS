@@ -127,6 +127,11 @@ Array.prototype.removeItemsByIndex = function removeItemsByIndex(indexes) {
 
 /** Strings */
 
+/**
+ * This prototype validates the format of the mail
+ *
+ * @returns {boolean} TRUE if the email is valid, otherwise FALSE
+ */
 String.prototype.validateEmail = function validateEmail() {
     const validRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -137,10 +142,22 @@ String.prototype.validateEmail = function validateEmail() {
     }
 }
 
+/**
+ * This function converts the first letter of a string to uppercase
+ *
+ * @returns {string}
+ */
 String.prototype.capFirstLetter = function capFirstLetter() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
+/**
+ * This function generates line breaks based on the number of characters specified
+ *
+ * @param {number} charactersPerLine 
+ * 
+ * @returns {string} text with line break
+ */
 String.prototype.addLineBreak = function addLineBreak(charactersPerLine) {
     var words = this.split(' ');
     var formattedText = '';

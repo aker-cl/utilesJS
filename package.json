@@ -2,7 +2,7 @@
   "name": "utilesjs",
   "version": "0.3.1",
   "description": "UtilesJS is a set of javascript and css utilities to facilitate the manipulation and use of some javascript elements and the DOM",
-  "main": "./dist/js/ES6/utiles.js",
+  "main": "./dist/js/ES/utiles.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
