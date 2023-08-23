@@ -1,10 +1,3 @@
-/******************************************\
-* EventsUtiles                             *
-*                                          *
-* @author jp7434 <scorpion9915@gmail.com>  *
-* @license MIT License                     *  
-\******************************************/
-
 /**
  * This function formats the RUT to the text of an input
  * It is recommended to use the function on input with onkeyup
@@ -146,30 +139,29 @@ const checkKeys = (event, validation) => {
 const filterTable = (tablaId, inputId) => {
     let table = document.querySelector(tablaId);
     let input = document.querySelector(inputId);
-    let filtro = input.value.toUpperCase();
-    let coincidencia = false;
-    let contador = 0;
+    let rows = table.getElementsByTagName("TR");
+    let filter = input.value.toUpperCase();
+    let coincidence = false;
+    let count = 0;
 
-    filas = table.getElementsByTagName("TR");
-
-    for (let fila of filas) {
-        if(contador > 0){
-            let celdas = fila.getElementsByTagName("TD");
+    for (let row of rows) {
+        if(count > 0){
+            let celdas = row.getElementsByTagName("TD");
             for (let celda of celdas) {
-                if (celda.textContent.toUpperCase().indexOf(filtro) > -1) {
-                    coincidencia = true;
+                if (celda.textContent.toUpperCase().indexOf(filter) > -1) {
+                    coincidence = true;
                     break;
                 }
             }
 
-            if (coincidencia) {
-                fila.style.display = "";
+            if (coincidence) {
+                row.style.display = "";
             } else {
-                fila.style.display = "none";
+                row.style.display = "none";
             }
 
-            coincidencia = false;
+            coincidence = false;
         }
-        contador++;
+        count++;
     }
 }

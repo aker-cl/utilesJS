@@ -21,12 +21,17 @@ UtilesJS is a set of javascript and css utilities to facilitate the manipulation
 See the full documentation in <a href="https://utilesjs.neocities.org" target="_blank">utilesjs.neocities.org</a> (Periodic update)
 
 Current development:
-- prototypes.js documentation
+- animationUtiles.js + documentation
 
 Next development:
-- eventsUtiles.js and animationUtiles.js
+- animationPrototypes.js
+- update cssTools
 
 ## Release Notes
+
+### v0.4.0 - Aug 23, 2023
+- add eventUtiles.js and eventUtiles.d.ts
+- Fix simulateKeyPress in prototypes
 
 ### v0.3.4 - Aug 22, 2023
 

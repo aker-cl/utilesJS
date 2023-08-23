@@ -1,15 +1,8 @@
-// @ts-check
-import './jsNode/prototypes.js';
+// import './jsNode/prototypes.js';
+import { filterTable } from '../dist/js/ES/eventsUtiles.js';
 // require('./jsNode/prototypes.js');
+// console.log(filterTable('#tableFilter'));
 
-
-var array = [
-    {date: '2023-05-28', indicator: 1},
-    {date: '2023-05-28', indicator: 2},
-    {date: '2023-07-05', indicator: 1}
-];
-
-// @ts-ignore
-var newArray = array.groupByAttribute('date');
-
-console.log(newArray);
+document.querySelector('#inputFilter').addEventListener('keyup', function(){
+    filterTable('#tableFilter', this)
+});

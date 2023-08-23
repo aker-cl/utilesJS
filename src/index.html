@@ -43,21 +43,43 @@
     <section class="bg-light py-5">
         <div class="container px-5 my-5">
             <article>
-                <div class="row">
-                    <div class="col-md-3">
-                        <select id="exampleSetValuesSelectMultiple" name="select" class="form-control" multiple>
-                            <option value="1" data-opt="a">1</option>
-                            <option value="2" data-opt="b">2</option>
-                            <option value="3" data-opt="c">3</option>
-                            <option value="4" data-opt="d">4</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-primary" id="btnSelect">Set Values</button>
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="inputFilter" placeholder="Search something" autocomplete="off" style="max-width: 30%;"/>
                     </div>
                 </div>
-                <input id="inputTest" class="form-control mt-3"/>
-
+                <div class="col-md-12 mt-3">
+                    <table class="table table-bordered" id="tableFilter">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Last name</th>
+                                <th>Age</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>25</td>
+                                <td>USA</td>
+                            </tr>
+                            <tr>
+                                <td>Alice</td>
+                                <td>Smith</td>
+                                <td>30</td>
+                                <td>Canada</td>
+                            </tr>
+                            <tr>
+                                <td>David</td>
+                                <td>Johnson</td>
+                                <td>22</td>
+                                <td>UK</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </article>
         </div>
         <span id="numberEl"></span>
@@ -73,9 +95,3 @@
     console.log(UtilesJS());
 </script> -->
 <script src="./test.js" type="module"></script>
-
-<script>
-    $('.select2').select2({
-        placeholder: "Select a option",
-    });
-</script>
