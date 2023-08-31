@@ -66,7 +66,8 @@ const checkKeys = (event, validation) => {
         k: ["k"],
         capitalK: ["K"],
         dot: ["."],
-        comma: [","]
+        comma: [","],
+        specialCharacters: ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
     }
 
     switch (typeof validation) {
@@ -177,5 +178,138 @@ const filterTable = (tableId, input) => {
             coincidence = false;
         }
         count++;
+    }
+}
+
+/**
+ * This function does the same as the "sticky" css property, but you can define which will be the "tops" of both the top and bottom element,
+ * together with the space between each one and the focus in the scroll of an element or window.
+ *
+ * @param {Object} opts Function configuration object
+ * @param {string} opts.elementToMove id of element to move.
+ * @param {string} opts.scrollFocusElement id or name of scroll focus element ('window' or 'elementID').
+ * @param {string|null} opts.topElement id of upper stop element (null is de top of the window).
+ * @param {string|null} opts.bottomElement id of bottom stop element (with null there is no bottom stop).
+ * @param {number} opts.topSeparation spacing size with top element in px.
+ * @param {number} opts.bottomSeparation spacing size with bottom element in px.
+ */
+const scrollTransition = (opts) => {
+    var scrollY = window.scrollY;
+    var diffWidth = 0;
+    var addHeight = 0;
+    var addBottom = 0;
+    var topElementId = null; 
+    var bottomElementId = null;
+    var elementId = opts.elementToMove;
+
+    topElementId = opts.topElement ?? null;
+    bottomElementId = opts.bottomElement ?? null;
+
+    if(opts.scrollFocusElement == 'window'){
+        addHeight = opts.topSeparation ?? 7;
+        addBottom = opts.bottomSeparation * -1 ?? -55;
+
+        window.addEventListener('scroll', () => {
+            setPositions();
+        });
+    }else{
+        let elementListener = document.querySelector(`#${opts.scrollFocusElement}`);
+        addHeight = opts.topSeparation ?? 35;
+        addBottom = opts.bottomSeparation ?? 20;
+        
+        elementListener.addEventListener('scroll', function() {
+            diffWidth = 0.15;
+            setPositions();
+        });
+    }
+    
+    function setPositions(){
+        const element = document.querySelector(`#${elementId}`);
+        const parentElement = element.parentNode;
+        const elementRect = parentElement.getBoundingClientRect();
+        const elementTop = parentElement.getBoundingClientRect().top + scrollY;
+        const elementStyle = getComputedStyle(parentElement);
+        const widthScreen = window.innerWidth;
+        
+        /** Top element limit */
+        let topElement;
+        let topElementStyle;
+        let heightTopElement;
+        let topElementRect;
+
+        /** Bottom element limit */
+        let bottomElement;
+        let bottomElementStyle;
+        let bottomElementRect;
+        let bottomBottomElement;
+        
+        if(topElementId){
+            topElement = document.querySelector(`#${topElementId}`);
+            topElementStyle = getComputedStyle(topElement);
+            heightTopElement = parseFloat(topElementStyle.getPropertyValue("height")) + addHeight;
+            topElementRect = topElement.getBoundingClientRect();
+        }
+
+        if(bottomElementId){
+            bottomElement = document.querySelector(`#${bottomElementId}`);
+            bottomElementStyle = getComputedStyle(bottomElement);
+            bottomBottomElement = parseFloat(bottomElementStyle.getPropertyValue("bottom"));
+            bottomElementRect = bottomElement.getBoundingClientRect();
+        }
+
+
+        let widthWithPadding = elementStyle.getPropertyValue("width");
+        let paddingLeft = parseFloat(elementStyle.getPropertyValue("padding-left"));
+        let paddingRight = parseFloat(elementStyle.getPropertyValue("padding-right"));
+        let realWidth = parseFloat(widthWithPadding) - (paddingLeft + paddingRight);
+        let totalWidth = ((realWidth * 100) / widthScreen) + 0.15 - diffWidth;
+        
+        if(topElementId){
+            if(bottomElementId){
+                if (topElementRect.bottom <= elementRect.top) {
+                    cleanElement();
+                } else if(topElementRect.bottom >= elementRect.top){
+                    if(bottomElementRect.height - addBottom >= elementRect.bottom || (bottomElementRect.height - addBottom - elementRect.bottom) >= ((element.offsetHeight * -1) + 32)){
+                        setPropElement('sticky', `${bottomBottomElement}px`, '');                             
+                    }else{
+                        setPropElement('fixed', `${heightTopElement}px`, `${totalWidth}%`);                             
+                    }                   
+                }
+            }else{
+                if (topElementRect.bottom <= elementRect.top) {
+                    cleanElement();
+                } else if(topElementRect.bottom >= elementRect.top){
+                    setPropElement('fixed', `${heightTopElement}px`, `${totalWidth}%`);               
+                }
+            }
+        }else if(bottomElementId){
+            if (scrollY <= elementTop) {
+                cleanElement();
+            } else if(scrollY >= elementRect.top){
+                if(scrollY >= elementRect.bottom){
+                    setPropElement('sticky', '5px', '');
+                }else{
+                    setPropElement('fixed', '5px', `${totalWidth}%`);
+                }                   
+            }        
+        }else{
+            if (scrollY >= elementTop && scrollY <= elementTop + parentElement.offsetHeight) {
+                setPropElement('fixed', '5px', `${totalWidth}%`);
+            } else {
+                cleanElement();
+            }
+        }
+
+        function cleanElement(){
+            element.style.position = 'sticky';
+            element.style.top = '';
+            element.style.width = '';
+        }
+
+        function setPropElement(pos, top, width){
+            element.style.position = pos;
+            element.style.top = top;
+            element.style.width = width;
+        }
     }
 }

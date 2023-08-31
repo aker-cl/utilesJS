@@ -1,10 +1,12 @@
+<script src="https://buttons.github.io/buttons.js"></script>
+
 <p align="center"><img src="./logo.png" width="400" alt="UtilesJS Logo"></p>
 
 <p align="center">
     <a href="https://www.npmjs.com/package/utilesjs" target="_blank"><img src="https://img.shields.io/npm/dt/utilesjs" alt="Downloads"></a>
     <a href="https://www.npmjs.com/package/utilesjs" target="_blank"><img src="https://img.shields.io/npm/v/utilesjs" alt="Version"></a>
     <img src="https://img.shields.io/npm/l/utilesjs" alt="Licence">
-<p>
+</p>
 
 ## About UtilesJS
 UtilesJS is a set of javascript and css utilities to facilitate the manipulation and use of some javascript elements and the DOM:
@@ -20,26 +22,32 @@ UtilesJS is a set of javascript and css utilities to facilitate the manipulation
 
 See the full documentation in <a href="https://utilesjs.neocities.org" target="_blank">utilesjs.neocities.org</a> (Periodic update)
 
+ATTENTION: Both the structure, functionality and documentation of some utilities may have changes before version 1.0.0, which will be stable and from then on, the structures and documentation of possible new features will be the same.
+
 Current development:
-- animationUtiles.js + documentation
+- animationPrototypes.js + documentation
 
 Next development:
-- animationPrototypes.js
 - update cssTools
 
 ## Release Notes
 
+### v0.5.0 - Aug 31, 2023
+
+- Add scrollTransition function to eventsUtiles.js
+- Add animationUtiles.js and animationUtiles.d.ts
+
 ### v0.4.0 - Aug 23, 2023
-- add eventUtiles.js and eventUtiles.d.ts
+- Add eventUtiles.js and eventUtiles.d.ts
 - Fix simulateKeyPress in prototypes
 
 ### v0.3.4 - Aug 22, 2023
 
-- prototype "simulateKeyPress" is separated into prototype of input and textarea
+- Prototype "simulateKeyPress" is separated into prototype of input and textarea
 
 ### v0.3.3 - Aug 21, 2023
 
-- add some folders and files to .npmignore
+- Add some folders and files to .npmignore
 
 ### v0.3.2 - Aug 21, 2023
 
@@ -59,7 +67,7 @@ Next development:
 
 ### v0.2.5 - Aug 16, 2023
 
-- discountPrice function now just return de new price
+- DiscountPrice function now just return de new price
 - Correction of variable in function listenerInputsFilter of utiles.js
 - Add .d.ts to utiles.js
 
@@ -81,10 +89,10 @@ Next development:
 
 ### v0.2.0 - Aug 06, 2023
 
-- Change UtilesClass for funcion UtilesJS.
+- Change UtilesClass for function UtilesJS.
 - Finish utiles.js for node in ES6 and CommonJS.
 - Update utiles.js in umd.
-- Update de documentacion of utiles.js. Check in <a href="https://utilesjs.neocities.org">utilesjs.neocities.org</a>
+- Update documentation of utiles.js. Check in <a href="https://utilesjs.neocities.org">utilesjs.neocities.org</a>
 
 ### v0.1.0 - Aug 02, 2023
 

@@ -63,4 +63,4 @@ tsconfig.json
 
 .vscode
 .babelrc
-src/
+src
