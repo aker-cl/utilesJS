@@ -1,5 +1,3 @@
-<script src="https://buttons.github.io/buttons.js"></script>
-
 <p align="center"><img src="./logo.png" width="400" alt="UtilesJS Logo"></p>
 
 <p align="center">
@@ -31,6 +29,11 @@ Next development:
 - update cssTools
 
 ## Release Notes
+
+### v0.6.0 - Sep 04, 2023
+
+- Add animationPrototypes.js and animationPrototypes.d.ts
+- Change "CSS tools" to "Components"
 
 ### v0.5.0 - Aug 31, 2023
 

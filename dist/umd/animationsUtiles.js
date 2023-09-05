@@ -25,7 +25,7 @@ const animateValue = (element, start, end, textBefore = '', textAfter = '') => {
  * This function make a transition for show or hide a element
  *
  * @param {Object|Array} element div, span, select, etc.
- * @param {string} action
+ * @param {string} action transition of show of hide
  */
 const elementTransition = (element, action) => {
     switch (action) {
@@ -76,11 +76,11 @@ const elementTransition = (element, action) => {
     }
 }
 
-/**
+/** ATTENTION! this function just work with transition.css .
  * This function disable a button and displays a custom text next to a spinner based on button text
  * 
  * @param {element} btn button element DOM
- * @param {'start' | 'stop'} action action of button
+ * @param {string} action action of button
  * @param {string} text text of button
  */ 
 const loadingButton = (btn, action, text = null) => {
