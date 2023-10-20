@@ -1,6 +1,6 @@
 {
   "name": "utilesjs",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "UtilesJS is a set of javascript and css utilities to facilitate the manipulation and use of some javascript elements and the DOM",
   "main": "./dist/utiles.js",
   "scripts": {
