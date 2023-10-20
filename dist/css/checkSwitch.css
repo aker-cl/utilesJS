@@ -1,11 +1,3 @@
-/**
- * Ejample:
- * <label class="check-switch check-switch-1">
- *    <input type="checkbox">
- *    <span class="slider round"></span>
- * </label>
-*/
-
 .check-switch {
     position: relative;
     display: inline-block;

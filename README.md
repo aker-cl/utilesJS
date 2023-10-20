@@ -18,17 +18,31 @@ UtilesJS is a set of javascript and css utilities to facilitate the manipulation
 - Transitions
 - Etc.
 
-See the full documentation in <a href="https://utilesjs.neocities.org" target="_blank">utilesjs.neocities.org</a> (Periodic update)
+See the full documentation in <a href="https://utilesjs.neocities.org" target="_blank">utilesjs.neocities.org</a>
 
-ATTENTION: Both the structure, functionality and documentation of some utilities may have changes before version 1.0.0, which will be stable and from then on, the structures and documentation of possible new features will be the same.
+## Usage
 
-Current development:
-- animationPrototypes.js + documentation
+```javascript
+// Principal function
+import UtilesJS from 'utilesjs'
 
-Next development:
-- update cssTools
+// Individual functions
+import {nameOfFunction} from 'utilesjs/functions'
+
+// Prototypes
+import 'utilesjs/prototypes'
+```
 
 ## Release Notes
+
+### v1.0.0 - Oct 20, 2023
+
+- CommonJS in next update
+- utiles.js, animations.js and eventsUtiles.js are merged into utiles.js but in separate documentations (documentation in next update)
+- prototypes.js and animationsPrototypes.js are merged into utiles.js but in separate documentations (documentation in next update)
+- utiles.js functions can be used as a single function; "utilesJS()" or each of its functions can be used separately. "utilesJS()" will be the main mode of operation
+- It is allowed to enter both the element (object) and the element id in the functions that require it
+- The structure of some function arguments is changed
 
 ### v0.6.0 - Sep 04, 2023
 

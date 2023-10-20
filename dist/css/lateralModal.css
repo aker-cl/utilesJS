@@ -1,12 +1,3 @@
-/**
- * Show Modals Sideways (Left/Right)
- * Left modal: left-modal
- * Right modal: right-modal
- * To control the width of the modal, in the "modal-dialog-lateral" class div you have to add the style max-width: {width percentage}
- * Example: <div id="modal" class="modal left-modal fade"> | <div id="modal" class="modal right-modal fade">
-            <div class="modal-dialog modal-dialog-lateral" style="max-width: 29%">
-*/
-
 .modal.left-modal, .modal.right-modal{
     position: fixed;
     z-index: 9999;

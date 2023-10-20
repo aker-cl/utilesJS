@@ -55,6 +55,7 @@ out
 .vscode-test
 
 documentation
+documentationv2
 
 # webpack
 webpack.config.js

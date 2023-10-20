@@ -1,27 +1,30 @@
-/**
- * Scroll in table and static thead
- * height: table and scroll size  
-*/
-
-.tableFixHead {
-    overflow: auto;
-    height: 400px;
+.div-transition {
+    transition: opacity 0.5s ease;
 }
 
-.tableFixHead thead th {
-    position: sticky;
-    top: 0;
-    z-index: 3; 
-    background: #fff;
+.div-hide {
+    opacity: 0;
 }
 
-/**
- * Center items in a td of a table
-*/
+.div-show {
+    opacity: 1;
+}
 
-.center-items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: none;
+.spinner-loading {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin .75s linear infinite;
+}
+  
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
 }
