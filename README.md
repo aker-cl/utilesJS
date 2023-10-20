@@ -27,13 +27,18 @@ See the full documentation in <a href="https://utilesjs.neocities.org" target="_
 import UtilesJS from 'utilesjs'
 
 // Individual functions
-import {nameOfFunction} from 'utilesjs/functions'
+import {nameOfFunction} from 'utilesjs/dist/functions'
 
 // Prototypes
-import 'utilesjs/prototypes'
+import 'utilesjs/dist/prototypes'
 ```
 
 ## Release Notes
+
+
+### v1.0.1 - Oct 20, 2023
+
+- Usage correction of README.md
 
 ### v1.0.0 - Oct 20, 2023
 
