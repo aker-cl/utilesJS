@@ -891,11 +891,11 @@ export const elementTransition = (element, action) => {
  * 
  * @param {Object|string} btn element | id of element
  * @param {'start' | 'stop'} action action of element
- * @param {object} opts element style options
- * @param {string|null} opts.text [text = ''] - button text
- * @param {number|null} opts.width [width = 0.8] - spinner width
- * @param {number|null} opts.height [height = 0.8] - spinner height
- * @param {string|null} opts.spinnerClass [spinnerClass = 'spinner-loading'] - class in span of spinner
+ * @param {object} [opts] element style options
+ * @param {string|null} [opts.text] [text = ''] - button text
+ * @param {number|null} [opts.width=0.8] [width = 0.8] - spinner width
+ * @param {number|null} [opts.height=0.8] [height = 0.8] - spinner height
+ * @param {string|null} [opts.spinnerClass='spinner-loading'] [spinnerClass = 'spinner-loading'] - class in span of spinner
  */ 
 export const loadingButton = (btn, action, opts) => {
     let text = '', spinnerClass = 'spinner-loading';
