@@ -1,8 +1,8 @@
 {
-  "name": "utilesjs",
-  "version": "1.0.1",
-  "description": "UtilesJS is a set of javascript and css utilities to facilitate the manipulation and use of some javascript elements and the DOM",
-  "main": "./dist/utiles.js",
+  "name": "teseract-utilesjs",
+  "version": "1.0.0",
+  "description": "UtilesJS is a set of javascript utilities to facilitate the manipulation and use of some javascript elements and the DOM",
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,26 +12,17 @@
   },
   "keywords": [
     "javascript",
-    "typescript",
-    "css",
     "js",
     "utiles",
     "utilities"
   ],
-  "author": "Aker",
+  "author": "Teseract",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aker-cl/utilesJS/issues"
   },
-  "homepage": "https://utilesjs.neocities.org",
-  "devDependencies": {
-    "@babel/core": "^7.22.9",
-    "@babel/node": "^7.22.6",
-    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
-    "@babel/preset-env": "^7.22.9",
-    "typescript": "^5.1.6",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
-  },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "teseract-utilesjs": "file:"
+  }
 }

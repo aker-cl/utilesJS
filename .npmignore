@@ -4,4 +4,7 @@ documentation/
 documentationv2/
 tsconfig.json
 webpack.config.js
+test/
 .vscode/
+.babellrc
+logo.png

@@ -86,7 +86,7 @@ export const arrayOrderBy = (array) => {
  * @return {Array} new array grouped by attribute
  */
 export const arrayGroupBy = (arr, attribute) => {
-    if (typeof arr != 'string') throw new Error('The argument "arr" must be an array');
+    if (typeof arr != 'object') throw new Error('The argument "arr" must be an array');
     if (typeof attribute != 'string') throw new Error('The argument "attribute" must be a string');
 
     // @ts-ignore
@@ -155,6 +155,30 @@ export const arrayRemoveItemsByIndex = (array, indexes) => {
     }
 }
 
+/**
+ * This function indexes the elements of an array based on the value of a parameter
+ * 
+ * @param {Array<Object>} array 
+ * @param {String} prop 
+ * @returns 
+ */
+export const arrayIndexBy = (array, prop) => {
+    return array.reduce((acc, item) => {
+        acc[item[prop]] = item;
+        return acc
+    }, {})
+}
+
+/**
+ * 
+ * @param {Array} array 
+ * 
+ * @returns {Array}
+ */
+export const arrayClone = (array) => {
+    return [...array];
+}
+
 /** Strings */
 
 /**
@@ -218,6 +242,47 @@ export const validateEmail = (email) => {
     } else {
         return false;
     }
+}
+
+/**
+ * This function validates the format of the rut
+ * 
+ * @param {string} rut rut to validate
+ *
+ * @returns {boolean} TRUE if the rut is valid, otherwise FALSE
+ */
+export const validateRut = (rut) => {
+    if (typeof rut != 'string') throw new Error('The argument "rut" must be a string');
+
+    var dashCheck = rut.match(/-/g)
+  
+    if(dashCheck == null || dashCheck.length > 1)
+        return false
+    
+    rut = rut.replace(/\./g, "").replace(/-/g, "")
+
+  
+    var checkDigit = rut.charAt(rut.length - 1)
+
+
+    var rutWithoutDigit = rut.slice(0, -1)
+
+
+    var sum = 0
+    var multiplier = 2
+
+    for (var i = rutWithoutDigit.length - 1; i >= 0; i--) {
+        sum += 
+        multiplier * parseInt(rutWithoutDigit.charAt(i), 10)
+        multiplier = multiplier < 7 ? multiplier + 1 : 2
+    }
+
+    /** @type {string|number} */
+    var expectedDigit = 11 - (sum % 11)
+
+    expectedDigit = (expectedDigit === 11) ? "0" : (expectedDigit === 10) ? "K" : expectedDigit.toString()
+
+    return checkDigit === expectedDigit
 }
 
 /** Numbers */
@@ -300,12 +365,35 @@ export const percentDiff = (num1, num2, absVal = null) => {
     return result
 }
 
+/**
+ * This function divides a number into parts and adjusts the parts
+ * 
+ * @param {Number} number 
+ * @param {Number} divider 
+ * @returns 
+ */
+export const divideAndAdjust = (number, divider) => {
+    const base = Math.floor(number / divider)
+    const rest = number % divider
+    const parts = []
+
+    for (let i = 0; i < divider; i++){
+        parts.push(base)
+    }
+    
+    for (let i = 0; i < rest; i++) {
+        parts[i] += 1
+    }
+    
+    return parts
+}
+
 /** DOM */
 
 /**
  * This function get the selected option text from a select element
  * 
- * @param {HTMLSelectElement|string} select element or id element
+ * @param {Object|string} select element or id element
  *
  * @returns {string} text of selected option
  */
@@ -322,7 +410,7 @@ export const getTextOfSelect = (select) => {
 /**
  * This function get the value of an attribute of the selected option of select element
  * 
- * @param {HTMLSelectElement|string} select element or id element
+ * @param {Object|string} select element or id element
  * @param {string} attribute attribute name to retrieve
  *
  * @returns {string} attribute value of selected option
@@ -341,7 +429,7 @@ export const getDataOfSelect = (select, attribute) => {
 /**
  * This function get all attributes values of the selected options of a select element
  * 
- * @param {HTMLSelectElement|string} select element or id element
+ * @param {Object|string} select element or id element
  *
  * @returns {array} array with attributes of selected options
  */
@@ -371,7 +459,7 @@ export const getAllDataOfSelect = (select) => {
 /**
  * This function get selected options values of a select multiple
  * 
- * @param {HTMLSelectElement|string} select element or id element
+ * @param {Object|string} select element or id element
  * 
  * @returns {array} array with selected options values
  */
@@ -379,11 +467,9 @@ export const getValuesSelectMultiple = (select) => {
     if(!['string', 'object'].includes(typeof select)) throw new Error('The type of the "select" argument must be string or object');
     if(typeof select == 'string' && document.querySelector(`#${select}`) == undefined) throw new Error(`The element with id "${select}" is undefined`);
     if(typeof select == 'object' && select.nodeName != 'SELECT') throw new Error('The element type of the "select" argument must be a select');
-    // @ts-ignore
     if(typeof select == 'string') select = document.querySelector(`#${select}`);
 
     let values = [];
-    // @ts-ignore
     let options = select.selectedOptions;
 
     for (const option of options) {
@@ -396,7 +482,7 @@ export const getValuesSelectMultiple = (select) => {
 /**
  * This function change the value of a select element
  * 
- * @param {HTMLSelectElement|string} select element or id element
+ * @param {Object|string} select element or id element
  * @param {string | number} value value to assign in the select
  */
 export const setValueOfSelect =  (select, value) => {
@@ -404,20 +490,18 @@ export const setValueOfSelect =  (select, value) => {
     if(typeof select == 'string' && document.querySelector(`#${select}`) == undefined) throw new Error(`The element with id "${select}" is undefined`);
     if(typeof select == 'object' && select.nodeName != 'SELECT') throw new Error('The element type of the "select" argument must be a select');
     if(!['string', 'number'].includes(typeof value)) throw new Error('The type of the "value" argument must be string or number');
-    // @ts-ignore
     if(typeof select == 'string') select = document.querySelector(`#${select}`);
 
     const eventChange = new Event("change");
-    // @ts-ignore
+    
     select.value = value;
-    // @ts-ignore
     select.dispatchEvent(eventChange);
 }
 
 /**
  * This function assign values to a select multiple
  * 
- * @param {HTMLSelectElement|string} select element or id element
+ * @param {Object|string} select element or id element
  * @param {Object|array} data object with attributes or array with values
  * @param {string|null} attribute attribute name of object in array to assign values to the select multiple
  */
@@ -427,7 +511,6 @@ export const setValuesSelectMultiple = (select, data, attribute = null) => {
     if(typeof select == 'object' && select.nodeName != 'SELECT') throw new Error('The element type of the "select" argument must be a select');
     if(!['object'].includes(typeof data)) throw new Error('The type of the "data" argument must be an object');
     if(attribute != null && typeof attribute != 'string') throw new Error('The type of the "attribute" argument must be an object');
-    // @ts-ignore
     if(typeof select == 'string') select = document.querySelector(`#${select}`);
 
     function getTypeOf(obj) {
@@ -436,6 +519,7 @@ export const setValuesSelectMultiple = (select, data, attribute = null) => {
                 return 'object';
             }
         }
+
         return 'array';
     }
 
@@ -455,7 +539,6 @@ export const setValuesSelectMultiple = (select, data, attribute = null) => {
     }
 
     values = values.map(i => String(i));
-    // @ts-ignore
     for (const option of select.options) {
         if (values.includes(option.value)) {
             option.selected = true;
@@ -463,14 +546,13 @@ export const setValuesSelectMultiple = (select, data, attribute = null) => {
             option.selected = false;
         }
     }
-    // @ts-ignore
     select.dispatchEvent(event);
 }
 
 /**
  * This function add a row to an HTML table in a designed position
  * 
- * @param {HTMLTableElement|string} table element or id element
+ * @param {Object|string} table element or id element
  * @param {string} row HTML of the row to be added
  * @param {'first'|'last'|number} position 'first' | 'last' | number -> position of the row in the table
  * @param {Object|null} object object of values to add to the new row
@@ -559,23 +641,24 @@ export const setParamUrl = (parameter, value) => {
 }
 
 /**
- * This function removes a parameter from the url (this reloads the page to take effect)
+ * This function removes a parameter from the url (if 'parameters' is empty, all parameters are removed)
  * 
- * @param {string} parameter name of parameter
+ * @param {array} parameters name of parameter
 */
-export const deleteParamUrl = (parameter) => {
-    if(typeof parameter != 'string') throw new Error('The type of the "parameter" argument must be a string');
-
-    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
-        const url = new URL(window.location.href);
-        const params = new URLSearchParams(url.search.slice(1));
-        params.delete(parameter);
-        window.history.replaceState(
-            {},
-            '',
-            `${window.location.pathname}${params}${window.location.hash}`,
-        )
+export const deleteParamUrl = (parameters= []) => {
+    // Obtener la URL actual
+    const url = new URL(window.location.href);
+    
+    if (parameters.length === 0) {
+        // Si no se especifican parámetros, eliminar todos
+        url.search = '';
+    } else {
+        // Eliminar solo los parámetros especificados
+        parameters.forEach(param => url.searchParams.delete(param));
     }
+    
+    // Actualizar la URL en la barra de direcciones sin recargar la página
+    window.history.replaceState({}, '', url);
 }
 
 /**
@@ -672,8 +755,20 @@ export const listenerNumberPage =  (classLink, classFilter, url, idPageInput) =>
         element.addEventListener('click', function(e){
             e.preventDefault();
             if(this.text != undefined){
-                // @ts-ignore
-                page.value = this.text;
+                let rel = this.getAttribute('rel');
+
+                if (rel != null) {
+                    if (rel == 'next') {
+                        // @ts-ignore
+                        page.value = parseInt(page.value) + 1
+                    }else if(rel == 'prev') {
+                        // @ts-ignore
+                        page.value = parseInt(page.value) - 1
+                    }
+                }else{
+                    // @ts-ignore
+                    page.value = parseInt(this.text);
+                }
             }
             // @ts-ignore
             filterPage(classFilter, url, page.value);
@@ -794,7 +889,7 @@ export const elementTransition = (element, action) => {
 /**
  * This function disable a button or "a" element and displays a custom text next to a spinner based on button text
  * 
- * @param {HTMLElement|string} btn element | id of element
+ * @param {Object|string} btn element | id of element
  * @param {'start' | 'stop'} action action of element
  * @param {object} opts element style options
  * @param {string|null} opts.text [text = ''] - button text
@@ -853,7 +948,7 @@ export const loadingButton = (btn, action, opts) => {
  * This function formats the RUT to the text of an input in format 11111111-1
  * It is recommended to use the function on input with onkeyup
  * 
- * @param {HTMLInputElement} input
+ * @param {Object} input
  */
 export const formatRut = (input) =>{
     if(typeof input != 'object') throw new Error('The type of the "input" argument must be an object');
@@ -872,7 +967,7 @@ export const formatRut = (input) =>{
  * This function controls the maximum number of characters in an input, useful with type="number" inputs 
  * It is recommended to use the function on input with onkeypress
  * 
- * @param {HTMLInputElement|HTMLTextAreaElement} input
+ * @param {Object} input
  */
 export const maxLengthCheck = (input) =>{
     if(typeof input != 'object') throw new Error('The type of the "input" argument must be an object');
@@ -893,8 +988,6 @@ export const maxLengthCheck = (input) =>{
  * @param {Event} event
  * @param {Array<"letters"|"capitalLetters"|"accentMarkLetters"|"accentMarkCapitalLetters"|
  * "numbers"|"space"|"plus"|"minus"|"k"|"capitalK"|"dot"|"comma"|"specials">} validation type of validation
- *
- * @returns {boolean} if the key is valid it allows writing, if not, it does not write to the input
  */
 export const checkKeys = (event, validation) => {
     if(typeof event != 'object') throw new Error('The type of the "event" argument must be an object');
@@ -933,18 +1026,16 @@ export const checkKeys = (event, validation) => {
 
     keys = array;
 
-    if(keys.includes(key)){
-        return true;
-    }else{
-        return false;
+    if(!keys.includes(key)){
+        event.preventDefault();
     }
 }
 
 /**
  * This function filters by text an html table
  * 
- * @param {HTMLInputElement|string} input element | id of element
- * @param {HTMLTableElement|string} table element | id of element
+ * @param {Object|string} input element | id of element
+ * @param {Object|string} table element | id of element
  */
 export const filterTable = (input, table) => {
     if(!['string', 'object'].includes(typeof table)) throw new Error('The type of the "table" argument must be string or object');
@@ -1025,6 +1116,7 @@ export const scrollTransition = (opts) => {
 
     if(opts.scrollFocusElement == 'window'){
         addHeight = opts.topSeparation ?? 7;
+        // @ts-ignore
         addBottom = opts.bottomSeparation * -1 ?? -55;
 
         window.addEventListener('scroll', () => {
