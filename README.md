@@ -1,9 +1,9 @@
 <p align="center"><img src="https://utilesjs.neocities.org/images/logo.png" width="400" alt="UtilesJS Logo"></p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/utilesjs" target="_blank"><img src="https://img.shields.io/npm/dt/utilesjs" alt="Downloads"></a>
-    <a href="https://www.npmjs.com/package/utilesjs" target="_blank"><img src="https://img.shields.io/npm/v/utilesjs" alt="Version"></a>
-    <img src="https://img.shields.io/npm/l/utilesjs" alt="Licence">
+    <!-- <a href="https://www.npmjs.com/package/utilesjs" target="_blank"><img src="https://img.shields.io/npm/dt/utilesjs" alt="Downloads"></a> -->
+    <!-- <a href="https://www.npmjs.com/package/utilesjs" target="_blank"><img src="https://img.shields.io/npm/v/utilesjs" alt="Version"></a> -->
+    <!-- <img src="https://img.shields.io/npm/l/utilesjs" alt="Licence"> -->
 </p>
 
 ## About UtilesJS
