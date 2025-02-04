@@ -1,6 +1,6 @@
 {
   "name": "teseract-utilesjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "UtilesJS is a set of javascript utilities to facilitate the manipulation and use of some javascript elements and the DOM",
   "main": "./index.js",
   "scripts": {
